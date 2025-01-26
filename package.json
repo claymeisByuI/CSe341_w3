@@ -1,0 +1,39 @@
+{
+  "name": "cse341_w1_contacts",
+  "version": "1.0.0",
+  "description": "Contacts project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./swagger-gen.js && nodemon server.js",
+    "swagger": "node ./swagger-gen.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claymeisByuI/CSE341_w1_contacts.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/claymeisByuI/CSE341_w1_contacts/issues"
+  },
+  "homepage": "https://github.com/claymeisByuI/CSE341_w1_contacts#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.5",
+    "mongoose-to-swagger": "^1.5.1",
+    "nodemon": "^2.0.15",
+    "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "swagger-autogen": "^2.19.0"
+  }
+}

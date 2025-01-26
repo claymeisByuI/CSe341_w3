@@ -1,0 +1,130 @@
+﻿@baseUrl = http://localhost:8080
+# @baseUrl = https://cse341-w1-contacts-5kwt.onrender.com
+
+###
+# Root Endpoint
+GET {{baseUrl}}/
+
+###
+# Get All Contacts
+GET {{baseUrl}}/contacts/
+
+###
+# Create a New Contact
+POST {{baseUrl}}/contacts/
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "favoriteColor": "blue",
+  "birthday": "1990-01-01"
+}
+> {%
+    client.global.set("contactId", response.body._id);
+    console.log(client.global.get("contactId"))
+%}
+
+###
+# Get a Contact by ID
+GET {{baseUrl}}/contacts/{{contactId}}
+
+###
+# Update an Existing Contact
+PUT {{baseUrl}}/contacts/{{contactId}}
+Content-Type: application/json
+
+{
+  "_id": "{{contactId}}",
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "favoriteColor": "green",
+  "birthday": "1992-02-02"
+}
+
+###
+# Delete a Contact
+DELETE {{baseUrl}}/contacts/{{contactId}}
+
+###
+# Get All Tasks
+GET {{baseUrl}}/tasks/
+
+###
+# Create a New Task
+POST {{baseUrl}}/tasks/
+Content-Type: application/json
+
+{
+  "title": "Buy groceries2",
+  "description": "Milk, eggs, bread",
+  "status": "to-do",
+  "priority": "medium",
+  "dueDate": "2025-02-02T00:00:00.000Z",
+  "assignedTo": "63ab9a0bcf8c0a12ab0dc345"
+}
+> {%
+    client.global.set("taskId", response.body._id);
+    console.log(client.global.get("taskId"))
+%}
+###
+# Get a Task by ID
+GET {{baseUrl}}/tasks/{{taskId}}
+
+###
+# Update an Existing Task
+PUT {{baseUrl}}/tasks/{{taskId}}
+Content-Type: application/json
+
+{
+  "title": "Updated Task Title",
+  "description": "Updated description",
+  "status": "in-progress",
+  "priority": "high",
+  "dueDate": "2025-03-01T00:00:00.000Z"
+}
+
+###
+# Delete a Task by ID
+DELETE {{baseUrl}}/tasks/{{taskId}}
+
+###
+# Retrieve All Users
+GET {{baseUrl}}/users/
+
+###
+# Create a New User
+POST {{baseUrl}}/users/
+Content-Type: application/json
+
+{
+  "username": "janeDoe",
+  "email": "jane@example.com",
+  "password": "PlainTextPassword",
+  "roles": ["user"]
+}
+> {%
+    client.global.set("userId", response.body._id);
+    console.log(client.global.get("userId"))
+%}
+###
+# Retrieve a Single User by ID
+GET {{baseUrl}}/users/{{userId}}
+
+###
+# Update an Existing User by ID
+PUT {{baseUrl}}/users/{{userId}}
+Content-Type: application/json
+
+{
+  "username": "johnDoeUpdated",
+  "email": "johnupdated@example.com",
+  "password": "NewPlainTextPassword",
+  "roles": ["admin"]
+}
+
+###
+# Delete a User by ID
+DELETE {{baseUrl}}/users/{{userId}}
