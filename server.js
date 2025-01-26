@@ -32,8 +32,8 @@ app
   .use("/", require("./routes"))
   .use(function handleValidationError(error, req, res, next) {
     if (error instanceof mgoo.Error.ValidationError) {
-      return res.status(500).send({
-        httpStatus: 500,
+      return res.status(400).send({
+        httpStatus: 400,
         message: error.message,
         errorDetails: {},
       });
