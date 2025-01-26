@@ -16,7 +16,7 @@ const doc = {
       description: "Local development server",
     },
     {
-      url: "https://cse341-w1-contacts-5kwt.onrender.com",
+      url: "https://cse341-w3-wize.onrender.com",
       description: "render server",
     },
   ],
