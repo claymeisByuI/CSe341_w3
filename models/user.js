@@ -8,17 +8,13 @@ const userSchema = new mongoose.Schema(
       trim: true,
       unique: true, // No duplicate usernames
     },
-    email: {
+    photo: {
       type: String,
-      required: true,
-      trim: true,
-      unique: true, // No duplicate email addresses
-      match: [/.+@.+\..+/, "Please enter a valid email address"],
     },
-    password: {
+    profileUrl: {
       type: String,
-      required: true,
     },
+
     roles: {
       type: [String],
       default: ["user"], // Could also be ['user', 'admin']

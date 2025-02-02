@@ -1,4 +1,5 @@
 ﻿const mongoose = require("mongoose");
+const { Decimal128 } = require("mongodb");
 
 const taskSchema = new mongoose.Schema(
   {
@@ -10,6 +11,14 @@ const taskSchema = new mongoose.Schema(
     description: {
       type: String,
       default: "",
+    },
+    project: {
+      type: String,
+      default: "",
+    },
+    percentComplete: {
+      type: Decimal128,
+      default: 0.05,
     },
     status: {
       type: String,
